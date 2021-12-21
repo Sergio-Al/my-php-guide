@@ -1,7 +1,8 @@
 <?php
 require_once 'AbstractVehicle.php';
+require_once 'DriveInterface.php';
 
-class Car extends AbstractVehicle
+final class Car extends AbstractVehicle implements DriveInterface
 {
     public $doors = 4;
     public $passengerCapacity = 5;
@@ -9,11 +10,26 @@ class Car extends AbstractVehicle
     public $transmission = 'Manual';
     private $hasKeyinIgnition = true;
 
-    public function start()
+    final public function start() // with 'final' cannot be overriden
     {
         if ($this->hasKeyinIgnition) {
             $this->engineStatus = true;
         }
+    }
+
+    public function changeSpeed($speed)
+    {
+        echo "The car has been accelerated to " . $speed . " kph. " . PHP_EOL;
+    }
+
+    public function changeGear($gear)
+    {
+        echo "Shifted to gear number: " . $gear . ". " . PHP_EOL;
+    }
+
+    public function applyBreak()
+    {
+        echo "All the 4 breaks in the wheels applied . " . PHP_EOL;
     }
 }
 
@@ -45,3 +61,31 @@ echo "The Car is " . ($car->getEngineStatus() ? 'running' : 'stopped') . PHP_EOL
 
 $car->stop();
 echo "The Car is " . ($car->getEngineStatus() ? 'running' : 'stopped') . PHP_EOL;
+
+
+// using our interfaces
+echo PHP_EOL;
+echo "Using our interfaces" . PHP_EOL;
+echo PHP_EOL;
+$car1->changeSpeed(65);
+$car1->applyBreak();
+$car1->changeGear(4);
+$car1->changeSpeed(75);
+$car1->applyBreak();
+
+// using our method and attribute overloading runtimeAttributes from AbstractVehidle.php
+echo PHP_EOL;
+echo "Using our methods and attributes overloading" . PHP_EOL;
+echo PHP_EOL;
+
+$car1->ownerName = "John Doe";
+echo " Owner: " . $car1->ownerName . PHP_EOL;
+
+$car1->year = 2015;
+echo " Year: " . $car1->year . PHP_EOL;
+
+$car->wipers; // not initialized, it will be an undefined attribute
+
+$car->honk();
+$car->honk("gently");
+$car->honk("louder", "siren");

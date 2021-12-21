@@ -10,6 +10,8 @@ abstract class AbstractVehicle
     private $engineNumber;
     public static $counter = 0;
     protected $engineStatus = false;
+    protected $price;
+    private $runtimeAttributes = array();
 
     function __construct(
         $make = 'DefaultMake',
@@ -86,6 +88,51 @@ abstract class AbstractVehicle
     function getEngineStatus()
     {
         return $this->engineStatus;
+    }
+
+    function getPrice()
+    {
+        return $this->price;
+    }
+
+    function setPrice($price)
+    {
+        $this->price = $price;
+    }
+
+    // for attribute overloading we use __set and __get with runtimeAttributes array
+    function __set($attribute, $value)
+    {
+        $this->runtimeAttributes[$attribute] = $value;
+    }
+
+    function __get($attribute)
+    {
+        if (array_key_exists($attribute, $this->runtimeAttributes)) {
+            return $this->runtimeAttributes[$attribute];
+        } else {
+            echo "Error: Undefined attribute. " . PHP_EOL;
+        }
+    }
+
+    // for methods oveloading we use __call()
+    function __call($method, $arguments)
+    {
+        switch ($method) {
+            case 'honk':
+                if (isset($arguments[0])) {
+                    echo "Honking $arguments[0]..." . PHP_EOL;
+                } else {
+                    echo "Honking.... " . PHP_EOL;
+                }
+                if (isset($arguments[1])) {
+                    echo "$arguments[1] enabled... " . PHP_EOL;
+                }
+                break;
+            default:
+                echo "The method $method() called. " . PHP_EOL;
+                break;
+        }
     }
 }
 
