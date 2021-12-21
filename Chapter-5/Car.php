@@ -20,3 +20,12 @@ echo "No of doors: " . $car->doors . PHP_EOL;
 echo "Transmission:  " . $car->transmission . PHP_EOL;
 echo "Passenger capacity: " . $car->passengerCapacity . PHP_EOL;
 echo "Engine No: " . $car->engineNumber . PHP_EOL; // this will raise a Notice message only because the property is completely unknown to the object. (private in Vehicle)
+
+// multiple instances of car
+$car1 = new Car('Honda', 'Civic', 'Blue', 4, '23CJ3422');
+$car2 = new Car('Toyota', 'Alion', 'White', 4, '24CJ3422');
+$car3 = new Car('Hyundai', 'Elantra', 'Black', 4, '23CJ9397');
+$car4 = new Car('Chevrolet', 'Camaro', 'Black', 4, '24CJ2344');
+
+// printing how many intances we have
+echo "Available cars are " . Car::$counter . PHP_EOL;

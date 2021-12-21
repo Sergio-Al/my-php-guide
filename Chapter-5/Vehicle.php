@@ -8,6 +8,7 @@ class Vehicle
     public $color;
     protected $noOfWheels;
     private $engineNumber;
+    public static $counter = 0;
 
     function __construct(
         $make = 'DefaultMake',
@@ -21,6 +22,7 @@ class Vehicle
         $this->color = $color;
         $this->noOfWheels = $wheels;
         $this->engineNumber = $engineNo;
+        self::$counter++;
     }
 
     function getMake()
