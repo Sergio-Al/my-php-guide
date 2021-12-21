@@ -1,10 +1,19 @@
 <?php
-require_once 'Vehicle.php';
+require_once 'AbstractVehicle.php';
 
-class Motorcycle extends Vehicle
+class Motorcycle extends AbstractVehicle
 {
     public $noOfWheels = 2;
     public $stroke = 4;
+    private $hasKey = true;
+    private $hasKicked = true;
+
+    public function start()
+    {
+        if ($this->hasKey && $this->hasKicked) {
+            $this->engineStatus = true;
+        }
+    }
 }
 
 $motorcycle = new Motorcycle("Kawasaki", "Ninja", "Orange", 2, "53WVC14598");
@@ -23,3 +32,12 @@ $motorcycle3 = new Motorcycle('Harley Davinson', 'Street 750', 'Black', 2, '53WV
 
 // The count of how many Motorcycle intances (objects) we have
 echo "Available motorcycles are " . Motorcycle::$counter . PHP_EOL;
+
+
+// using our abstracted start function from the AbstractedVehicle class
+$motorcycle->start();
+echo 'The motorcycle is ' . ($motorcycle->getEngineStatus() ? 'running' : 'stopped') . PHP_EOL;
+
+// using our stop method from our Abstracted class AbstractedVehicle
+$motorcycle->stop();
+echo 'The motorcyle is ' . ($motorcycle->getEngineStatus() ? 'running' : 'stopped') . PHP_EOL;

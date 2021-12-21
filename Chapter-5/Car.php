@@ -1,12 +1,20 @@
 <?php
-require_once 'Vehicle.php';
+require_once 'AbstractVehicle.php';
 
-class Car extends Vehicle
+class Car extends AbstractVehicle
 {
     public $doors = 4;
     public $passengerCapacity = 5;
     public $steeringWheel = true;
     public $transmission = 'Manual';
+    private $hasKeyinIgnition = true;
+
+    public function start()
+    {
+        if ($this->hasKeyinIgnition) {
+            $this->engineStatus = true;
+        }
+    }
 }
 
 $car = new Car('Honda', 'Civic', 'Red', 4, '23CJ4567');
@@ -19,7 +27,7 @@ echo "No of wheels: " . $car->getNoOfWheels() . PHP_EOL;
 echo "No of doors: " . $car->doors . PHP_EOL;
 echo "Transmission:  " . $car->transmission . PHP_EOL;
 echo "Passenger capacity: " . $car->passengerCapacity . PHP_EOL;
-echo "Engine No: " . $car->engineNumber . PHP_EOL; // this will raise a Notice message only because the property is completely unknown to the object. (private in Vehicle)
+echo "Engine No: " . $car->engineNumber . PHP_EOL; // this will raise a Notice message only because the property is completely unknown to the object. (private in AbstractVehicle class)
 
 // multiple instances of car
 $car1 = new Car('Honda', 'Civic', 'Blue', 4, '23CJ3422');
@@ -29,3 +37,11 @@ $car4 = new Car('Chevrolet', 'Camaro', 'Black', 4, '24CJ2344');
 
 // printing how many intances we have
 echo "Available cars are " . Car::$counter . PHP_EOL;
+
+
+// using our abstracted start function from the AbstractVehicle class
+$car->start();
+echo "The Car is " . ($car->getEngineStatus() ? 'running' : 'stopped') . PHP_EOL;
+
+$car->stop();
+echo "The Car is " . ($car->getEngineStatus() ? 'running' : 'stopped') . PHP_EOL;
