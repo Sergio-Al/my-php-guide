@@ -1,8 +1,10 @@
 <?php
+require_once 'PriceTrait.php';
 
 // With constructor
 abstract class AbstractVehicle
 {
+    use PriceTrait;
     public $make;
     public $model;
     public $color;
@@ -88,16 +90,6 @@ abstract class AbstractVehicle
     function getEngineStatus()
     {
         return $this->engineStatus;
-    }
-
-    function getPrice()
-    {
-        return $this->price;
-    }
-
-    function setPrice($price)
-    {
-        $this->price = $price;
     }
 
     // for attribute overloading we use __set and __get with runtimeAttributes array
