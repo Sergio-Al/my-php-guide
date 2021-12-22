@@ -1,5 +1,5 @@
 <?php
-namespace Vehicle;
+namespace Vehicle; // Our file Car.php will be a namespace
 
 /**
  * With spl_autoload_register() function we can register any number of
