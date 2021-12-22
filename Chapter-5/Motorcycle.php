@@ -1,6 +1,7 @@
 <?php
-require_once 'AbstractVehicle.php';
-require_once 'DriveInterface.php';
+namespace Vehicle;
+
+spl_autoload_register(); // explanation in Vehicle.php
 
 class Motorcycle extends AbstractVehicle implements DriveInterface
 {

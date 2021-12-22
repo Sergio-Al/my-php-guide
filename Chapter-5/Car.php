@@ -1,6 +1,11 @@
 <?php
-require_once 'AbstractVehicle.php';
-require_once 'DriveInterface.php';
+namespace Vehicle;
+
+/**
+ * With spl_autoload_register() function we can register any number of
+ * autoloaders so that we can load classes and interfaces on demand
+ */ 
+spl_autoload_register(); // autoloader function should load the AbstractVehicle class and the DriveInterface interface from the Vehicle directory as it supports class loading from a namespaced directory.
 
 final class Car extends AbstractVehicle implements DriveInterface
 {

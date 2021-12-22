@@ -1,5 +1,5 @@
 <?php
-
+namespace Vehicle;
 interface DriveInterface
 {
     public function changeSpeed($speed);
