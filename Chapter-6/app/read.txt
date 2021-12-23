@@ -1,0 +1,2 @@
+For this section start a local web server in the command line
+php -S localhost:8080
