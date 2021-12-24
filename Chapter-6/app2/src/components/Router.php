@@ -16,6 +16,10 @@ class Router
         switch ($_SERVER['PATH_INFO'] ?? '/') {
             case '/login':
                 return new Login();
+            case '/profile':
+                return new Profile();
+            case '/logout':
+                return new Logout();
             case '/':
                 return null;
             default:

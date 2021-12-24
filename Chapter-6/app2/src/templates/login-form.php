@@ -1,8 +1,9 @@
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center mt-5">
     <form method="post" action="/login" style="width: 100%; max-width: 420px;">
         <div class="text-center mb-4">
             <h1 class="h3 mb-3 font-weight-normal">Authenticate</h1>
-            <p>Use <code>admin</code> for both username and password </p>
+            <p>Use <code>admin</code> for username</p>
+            <p>Use <code>password</code> for password </p>
         </div>
 
         <div class="form-label-group mb-3">
