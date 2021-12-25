@@ -31,7 +31,6 @@ class Login extends Handler
             }
         }
 
-
         return (new \Components\Template('login-form'))->render([
             'formError' => $formError,
             'formUserName' => $formUsername ?? ''

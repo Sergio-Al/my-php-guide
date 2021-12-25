@@ -24,8 +24,6 @@ class Profile extends Handler
             }
         }
 
-        print_r($_SESSION['userdata']);
-
         return (new \Components\Template('profile'))->render([
             'username' => $_SESSION['username'],
             'formErrors' => $formErrors ?? null,
