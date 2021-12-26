@@ -1,0 +1,1 @@
+A file that the origin is sample/to-move.txt, this must be moved to another directory
