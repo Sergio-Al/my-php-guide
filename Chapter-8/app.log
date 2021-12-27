@@ -1,0 +1,6 @@
+2021-12-27T17:05:17+00:00 :: message, in [/Users/sergio/Documents/Web Development/PHPApps/my-php-guide/Chapter-8/log-handler.php] on line [13] (error code 2)
+2021-12-27T17:05:17+00:00 :: message, in [/Users/sergio/Documents/Web Development/PHPApps/my-php-guide/Chapter-8/log-handler.php] on line [13] (error code 2)
+2021-12-27T17:05:59+00:00 :: Undefined variable $width, in [/Users/sergio/Documents/Web Development/PHPApps/my-php-guide/Chapter-8/log-handler.php] on line [13] (error code 2)
+2021-12-27T17:05:59+00:00 :: Undefined variable $height, in [/Users/sergio/Documents/Web Development/PHPApps/my-php-guide/Chapter-8/log-handler.php] on line [13] (error code 2)
+2021-12-27T17:10:39+00:00 :: Undefined variable $width, in [/Users/sergio/Documents/Web Development/PHPApps/my-php-guide/Chapter-8/log-handler.php] on line [13] (error code 2)
+2021-12-27T17:10:39+00:00 :: Undefined variable $height, in [/Users/sergio/Documents/Web Development/PHPApps/my-php-guide/Chapter-8/log-handler.php] on line [13] (error code 2)
