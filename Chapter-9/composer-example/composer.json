@@ -1,0 +1,15 @@
+{
+    "name": "ivendor/composer-example",
+    "description": "creating a project using composer",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Sergio-Al",
+            "email": "sergio.alejandro.ml900@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "monolog/monolog": "^2.3"
+    }
+}

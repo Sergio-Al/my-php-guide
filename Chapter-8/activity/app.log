@@ -1,0 +1,7 @@
+------------------------------------------------------------------------------------
+TypeError [0] calculateFactorial(): Return value must be of type int, float returned
+>File: /Users/sergio/Documents/Web Development/PHPApps/my-php-guide/Chapter-8/activity/factorial.php
+>Line: 86
+>Trace: #0 /Users/sergio/Documents/Web Development/PHPApps/my-php-guide/Chapter-8/activity/factorial.php(95): calculateFactorial(21)
+#1 {main}
+------------------------------------------------------------------------------------
