@@ -40,3 +40,14 @@ private function __construct()
     }
 ```
 - now you can run a local server `>php -S localhost:8080` inside `Chapter-7/activity/web`.
+
+---
+
+## Chapter 9 Rules
+You need to install the packages using composer
+```
+composer install
+```
+If you change your custom namespaces in `composer.json` you need to **regenerate** the `vendor/autload.php` file.
+- You can delete the `autoload.php` file and run `composer install`.
+- If the last step does not work delete all the `vendor` folder and run `composer install`.
