@@ -1,0 +1,9 @@
+{
+    "name": "sergio/guzzle-example",
+    "description": "example of making request using guzzle",
+    "type": "project",
+    "require": {
+        "guzzlehttp/guzzle": "^7.4"
+    },
+    "minimum-stability": "stable"
+}

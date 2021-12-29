@@ -2,5 +2,6 @@ Chapter-7/sample/test-10mb.txt
 Chapter-7/sample/test-256mb.txt
 Chapter-9/composer-example/vendor/
 Chapter-9/activity-composer/vendor/
+Chapter-10/guzzle-example/vendor/
 
 .DS_Store
