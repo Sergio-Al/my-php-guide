@@ -1,5 +1,6 @@
 # A guide to PHP
 This repo shows a lot of info about php and with examples ready to test with a DB
+OOP in PHP too
 
 ## Guide to run Activity of Chapter 7
 > we are working on MySQL v8
